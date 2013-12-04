@@ -5,7 +5,7 @@ var actualPi = "";
 var interval;
 
 //Cache auf Variable Pi überprüfen und wenn nicht existiert in Cache laden 
-if (localStorage.getItem('pi') == undefined){
+if (localStorage.getItem('save_pi') == undefined){
 		//Ajax-Request machen
 		var xmlhttp;
 		if (window.XMLHttpRequest)
@@ -22,14 +22,14 @@ if (localStorage.getItem('pi') == undefined){
 		    {
 		    	var str_pi = xmlhttp.responseText;
 				str_pi = str_pi.replace("\"", ""); //Regex, jojo --> mol en sinvolli Aawändig för das ;)
-		    	localStorage.setItem('pi', JSON.stringify(parseInt(str_pi)));
+		    	localStorage.setItem('save_pi', str_pi);
 		    	pi = str_pi;
 		    }
 		  }
 		xmlhttp.open("GET","pi.txt",true);
 		xmlhttp.send();
 }else{
-	pi = localStorage.getItem('pi'); //Wenn Pi schon im LocalStorage ist, die Zahl laden und der Variable zuweisen
+	pi = localStorage.getItem('save_pi'); //Wenn Pi schon im LocalStorage ist, die Zahl laden und der Variable zuweisen
 }
 
 //Erledigt einige Dinge, nachdem die Seite geladen wurde
