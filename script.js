@@ -107,6 +107,8 @@ var points = 0;
 
 //Funktion für den Guessmode
 function guessNumber(num){
+	sendScoreContainer = document.getElementById("sendScoreContainer");
+	if(sendScoreContainer.style.display == "block"){sendScoreContainer.style.display = "none";}
 	guessedNum = parseInt(num);
 	correctNum = parseInt(pi.charAt(counter));
 	if(guessedNum == correctNum){
@@ -121,11 +123,14 @@ function guessNumber(num){
 	else{
 		document.getElementById("correct").style.display = "none";
 		document.getElementById("false").style.display = "block";
-		setTimeout(function(){document.getElementById("false").style.display = "none";},1500);
+		setTimeout(function(){document.getElementById("false").style.display = "none";
+		sendScoreContainer.style.display = "block";
+		document.getElementById("sendScoreNameInput").focus()},750);
 		counter = 0;
 		document.getElementById("points").innerHTML = "0 P.";
 		document.getElementById("points").style.color = "#ffffff";
 		document.getElementById("pi").innerHTML = "3.";
+		document.getElementById("sendScoreScoreHidden").value = points.toString();
 		points = 0;
 		addPos(0);
 	}

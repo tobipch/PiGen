@@ -7,8 +7,16 @@
     </head>
     <body>
         <?php include("header.php");?>
-        <div id="backBtn" onclick="history.back();"></div>
+        <div class="backBtn" onclick="history.back();"></div>
         <div id="releaseNotes_container">
+            <div class="version_notes" id="beta083">
+                <h1 class="version_title">BETA.083</h1>
+                <ul class="releaseNotes_list">
+                    <li class="releaseNotes_point">Guessmode Scores are now saved in a highscore list, which also can be viewed.</li>
+                    <li class="releaseNotes_point">Massive Speed improvement</li>
+                    <li class="releaseNotes_point"><a href="https://github.com/PixelWizard/PiGen" target="_blank">PiGen is now on Github</a>! ♪ Dance ♪! Be Happy =)</li>
+                </ul>
+            </div>
             <div class="version_notes" id="beta082">
                 <h1 class="version_title">BETA.082</h1>
                 <ul class="releaseNotes_list">

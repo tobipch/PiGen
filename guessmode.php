@@ -17,11 +17,19 @@
         <div id="resultContainer">
             <img src="images/correct.png" id="correct" />
             <img src="images/false.png" id="false" />
+            <div id="sendScoreContainer">
+                <form action="sites/sendHighscore.php" method="post">
+                    <input type="text" name="sendScore_score" id="sendScoreScoreHidden" />
+                    <input type="text" name="sendScore_name" id="sendScoreNameInput" placeholder="Name for Score" />
+                    <input type="submit" id="sendScoreButton" value="" />
+                </form>
+            </div>
         </div>
         <div class="actionContainer" id="g_actionContainer">
             <input type="text" class="valInput" id="g_valInput" value="1" maxlength="1" autofocus="true" />
             <button class="startBtn" id="g_startBtn" onclick="guessNumber(document.getElementById('g_valInput').value);"></button>
             <div id="points">0 P.</div>
+            <a href="sites/highscoreList.php"><div id="showHighscore"></div></a>
         </div>
         <p id="position">[Pos: 0]</p>
         <div id="piContainer">
