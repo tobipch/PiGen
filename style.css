@@ -1,0 +1,474 @@
+@font-face{
+    src: url(fonts/SourceLight.otf);
+    font-family: Source;
+}
+
+body{
+    background-image: url(images/bg.png);
+    margin: 0px;
+}
+
+#heading{
+    font-family: Source;
+    font-style: italic;
+    font-size: 3.75em;
+    text-align: center;
+    letter-spacing: 1px;
+    font-weight: normal;
+    border-bottom: 1px solid #BBB;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+#piContainer{
+    width: 60%;
+    position: relative;
+    left: 50%;
+    margin-left: -30%;
+}
+
+#pi{
+    font-family: Source;
+    font-size: 2.6em;
+    margin-bottom: 0px;
+    text-align: left; 
+    margin-top: 0px;
+    word-wrap: break-word;
+    clear: left;
+}
+
+#beta{
+    font-size: 0.22em;
+    font-style: normal;
+}
+
+#position{
+    text-align: center;
+    font-family: Source;
+    margin-bottom: 10px;
+    color: #696969;
+    clear: left;
+}
+
+.actionContainer{
+    height: 53px;
+    float: left;
+    left: 50%;
+    margin-left: -150px;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    position: relative;
+}
+
+#t_actionContainer{
+    margin-left: -155px;   
+}
+
+#g_actionContainer{
+    margin-left: -160px;   
+}
+
+.startBtn{
+    font-family: Source;
+    border: none;
+    background-color: #28e879;
+    height: 50px;
+    width: 180px;
+    box-shadow: 0px 3px rgba(40, 232, 121, 0.4);
+    cursor: pointer;
+    margin-bottom: 30px;
+    float: left;
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+.startBtn:active{
+    transform: translateY(3px);
+    -webkit-transform: translateY(3px);
+    box-shadow: none;
+}
+
+#resetBtn:active{
+    transform: translateY(3px);
+    -webkit-transform: translateY(3px);
+    box-shadow: none;
+}
+
+.valInput{
+    border: none;
+    font-family: Source;
+    font-size: 1.75em;
+    width: 60px;
+    text-align: center;
+    float: left;
+    height: 50px;
+    box-shadow: 0px 3px rgba(255, 255, 255, 0.4);
+    padding: 0;
+}
+
+#resetBtn{
+    float: left;
+    height: 50px;
+    width: 60px;
+    background-color: #3498db;
+    color: #FFF;
+    box-shadow: 0px 3px rgba(52, 152, 219, 0.4);
+    border: none;
+    font-family: Source;
+    font-size: 1.25em;
+    cursor: pointer;
+}
+
+#banner{
+    height: auto;
+    width: 100%;
+    background-color: #555;
+    font-family: Source;
+    color: #EEE;
+    font-size: 16px;
+    box-shadow: 0px 2px 1px #888;
+    position: fixed;
+    top: 0px;
+}
+
+#banner a{
+    text-decoration: none;
+    font-style: italic;
+    color: inherit;
+}
+
+.bannerContent{
+    margin: 0px 7px;   
+}
+
+.bannerContent:hover{
+    color: #AAA;   
+}
+
+.bannerContent:before{
+    margin-right: 2px;
+}
+
+#bannerMail:before{
+    content: url(images/envelop.png); 
+}
+
+#bannerTwitter:before{
+    content: url(images/twitter.png);
+}
+
+#bannerHome:before{
+    content: url(images/home.png);
+}
+
+.modeBtn{
+    float: right;
+    clear: right;
+    width: 100px;
+    margin: 3px 10px;
+    position: relative;
+    border: none;
+    background-color: #9b59b6;
+    color: white;
+    font-family: Source;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 2px 0px
+}
+
+.modeBtn:hover{
+    background-color: rgba(155, 89, 182, 0.8);
+}
+
+.active{
+    background-color: rgba(155, 89, 182, 0.4);  
+}
+
+.active:hover{
+    background-color: rgba(155, 89, 182, 0.4);
+}
+
+.optionBtn{
+    height: 50px;
+    width: 50px;
+    background-color: #e67e22;
+    box-shadow: 0px 3px rgba(230, 126, 34, 0.2);
+    border: none;
+    float: left;
+    cursor: pointer;
+    position: relative;
+    color: #FFFFFF;
+    font-family: Source;
+    letter-spacing: 1px;
+}
+
+.optionBtn:active{
+    transform: translateY(3px);
+    box-shadow: none;
+}
+
+#t_startBtn{
+    background-image: url(images/play.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 140px;
+}
+
+#g_valInput{
+    width: 75px;   
+}
+
+#g_startBtn{
+    width: 65px;
+    background-image: url(images/play.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#resultContainer{
+    width: 48px;
+    left: 0px;
+    margin: 0 auto;
+}
+
+#correct{
+    display: none;
+    background-color: #83fab5;
+    padding: 10px;
+    border-radius: 100%;
+    margin-bottom: 7px;
+    margin-top: -6px;
+}
+
+#false{
+    display: none;
+    background-color: #fdb0a8;
+    padding: 10px;
+    border-radius: 100%;
+    margin-bottom: 7px;
+    margin-top: -6px;
+}
+
+#points{
+    width: 195px;
+    background-color: #1abc9c;
+    box-shadow: 0px 3px rgba(26, 188, 156, 0.2);
+    height: 50px;
+    font-size: 36px;
+    float: left;
+    text-align: left;
+    padding-left: 5px;
+    font-family: Source;
+    color: #FFFFFF;
+}
+
+#imageCanvas{
+    position: relative;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: 50px;
+}
+
+#i_actionContainer {
+    width: 300px;
+    left: 50%;
+}
+
+#i_startBtn {
+    position: relative;
+    width: 100px;
+    background-image: url(images/play.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#imgBtnContainer {
+    left: 50%;
+    width: 200px;
+    margin-left: -100px;
+    position: relative;
+}
+
+#optionBtn_pause {
+    background-image: url(images/pause.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#optionBtn_size {
+    background-image: url(images/size_s.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#notification {
+    text-align: center;
+    font-family: Source;
+    color: #e74c3c;
+    font-size: 16px;
+    width: 50%;
+    left: 50%;
+    position: absolute;
+    margin-left: -25%;
+    margin-top: 10px;
+}
+
+#notification:hover #notificationImage{
+    display: none;
+}
+
+#notification:hover #notificationText{
+    display: block;
+}
+
+#notificationText {
+    display: none;
+}
+
+#notificationHoverHint {
+    position: relative;
+    top: -7px;
+}
+
+#notification:hover #notificationHoverHint {
+    display: none;
+}
+
+#optionBtn_color {
+    background-image: url(images/colorpalette.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#colorChoiceContainer {
+    margin-top: 60px;
+    text-align: center;
+    display: none;
+}
+
+.colorChoiceDiv {
+    font-family: Source;
+    font-weight: bolder;
+}
+
+h3 {
+    font-family: Source;
+    font-weight: normal;
+    letter-spacing: 1px;
+}
+
+a {
+    color: #2980b9;
+}
+
+a:visited{
+    color: #2980b9;
+}
+
+.colorChoiceInput {
+    margin-left: 5px;
+    width: 100px;
+}
+
+#colorChoiceApplyBtn {
+    margin-top: 10px;
+    width: 60%;
+    position: relative;
+    left: 50%;
+    margin-left: -30%;
+    height: 35px;
+}
+
+.floatRight {
+    float: right;
+}
+
+#bannerReleaseNotes {
+    font-size: 16px;
+}
+
+#bannerReleaseNotes:before {
+    content: url(images/releaseNotes.png);
+}
+
+#releaseNotes_heading {
+    font-weight: normal;
+    font-family: SourceLight;
+}
+
+#backBtn {
+    background-image: url(images/back.png);
+    height: 20px;
+    width: 20px;
+    position: relative;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+#releaseNotes_container {
+    position: absolute;
+    width: 60%;
+    height: auto;
+    left: 50%;
+    margin-left: -30%;
+}
+
+ .version_title {
+    text-align: center;
+    font-weight: normal;
+    font-size: 28px;
+    text-decoration: underline;
+    font-family: Source;
+    width: auto;
+}
+
+.releaseNotes_list {
+    text-align: center;
+    font-family: Source;
+    list-style-type: disc;
+    color: #2a2a2a;
+}
+
+#settingsButton {
+    background-image: url(images/settings.png);
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    margin: 17.5px;
+    cursor: pointer;
+    margin-top: 2.5px;
+    z-index: 2;
+}
+
+#settings {
+    height: 225px;
+    width: 150px;
+    background-color: #f7f7f7;
+    border: 2px solid black;
+    margin: 10px;
+    margin-top: -5px;
+    position: absolute;
+    z-index: 1;
+    visibility: hidden;
+    font-family: Source;
+    font-size: 0.95em;
+    text-transform:uppercase;
+    letter-spacing: 0.5px;
+}
+
+.settingOptionContainer {
+    margin-left: 5px;
+    margin-top: 30px;
+    margin-bottom: 0px;
+}
+
+#fontsize_range {
+    margin: 0px;
+    position: relative;
+    width: auto;
+}
+
+#settingOption {
+    margin: 0px;
+}
