@@ -13,6 +13,7 @@
                 <h1 class="version_title">BETA.084</h1>
                 <ul class="releaseNotes_list">
                     <li class="releaseNotes_point">80% Speed Improvement. Pi will now be safed in the local-storage. Implementation by <a href="https://github.com/fabiocofano">fco</a>!</li>
+                    <li class="releaseNotes_point">If submitted Score with no name in the Guessmode, it won't be saved!</li>
                 </ul>
             </div>
             <div class="version_notes" id="beta083">
