@@ -13,12 +13,10 @@
         
         mysql_query($db_connect) or die("Couldn't find proper Database!");
         $res = mysql_query($db_sendData) or die ("Couldn't run SQL Code. Check it");
-        echo($res);
-        if($res){
-            header('Location: ../guessmode.php');
-        }
-        else{
+        
+        if(!$res){
             echo($res);
         }
-	}
+    }
+    header('Location: ../guessmode.php');
 ?>
