@@ -1,7 +1,7 @@
 <?php
 	$host = "tobipch.mysql.db.internal";
     $username = "tobipch_pigen";
-    $password = "pi3141gen";
+    $password = "";
 	
 	$db = mysql_connect($host,$username,$password) or die("Couldn't connect to Database!");
 	$db_connect = "use tobipch_pigen";

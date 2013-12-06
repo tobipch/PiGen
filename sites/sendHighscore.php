@@ -1,11 +1,11 @@
 <?php
-	$name = utf8_decode($_POST["sendScore_name"]);
-	$score = utf8_decode($_POST["sendScore_score"]);
+	$name = htmlspecialchars(utf8_decode($_POST["sendScore_name"]));
+	$score = htmlspecialchars(utf8_decode($_POST["sendScore_score"]));
 	
 	if($name != ""){
         $host = "tobipch.mysql.db.internal";
         $username = "tobipch_pigen";
-        $password = "pi3141gen";
+        $password = "";
         
         $db = mysql_connect($host,$username,$password) or die("Couldn't connect to Database!");
         $db_connect = "use tobipch_pigen";
