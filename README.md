@@ -21,7 +21,7 @@ If you are nerd enough and learnd some digitis of pi, you'll enjoy this mode. He
 I don't think that you ever saw a real image of pi. You can see the original Pi-Image. There's an opportunity to personalize the Pi-Image! So check it out
 
 ##Where is PiGen?
-You can find PiGen on http://tdpgamma.freeiz.com
+You can find PiGen on http://tobip.ch/pigen
 
 ##Contact
 Find me on:

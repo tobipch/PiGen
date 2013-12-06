@@ -1,10 +1,10 @@
 <?php
-	$host = "mysql15.000webhost.com";
-	$username = "a9696726_pigen";
-	$password = "pi3141";
+	$host = "tobipch.mysql.db.internal";
+    $username = "tobipch_pigen";
+    $password = "pi3141gen";
 	
 	$db = mysql_connect($host,$username,$password) or die("Couldn't connect to Database!");
-	$db_connect = "use a9696726_pigen";
+	$db_connect = "use tobipch_pigen";
 	$db_getData = "select * from highscore order by score desc";
 	
 	mysql_query($db_connect) or die ("Couldn't find proper Database!");

@@ -4,16 +4,16 @@ var counter = 0;
 var actualPi = "";
 var interval;
 
-//Cache auf Variable Pi überprüfen und wenn nicht existiert in Cache laden 
+//Cache auf Variable Pi ï¿½berprï¿½fen und wenn nicht existiert in Cache laden 
 if (localStorage.getItem('save_pi') == undefined){
 		//Ajax-Request machen
 		var xmlhttp;
 		if (window.XMLHttpRequest)
-		  {// code für IE7+, Firefox, Chrome, Opera, Safari
+		  {// code fï¿½r IE7+, Firefox, Chrome, Opera, Safari
 		  xmlhttp=new XMLHttpRequest();
 		  }
 		else
-		  {// code für IE6, IE5
+		  {// code fï¿½r IE6, IE5
 		  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
 		  }
 		xmlhttp.onreadystatechange=function()
@@ -21,9 +21,9 @@ if (localStorage.getItem('save_pi') == undefined){
 		  if (xmlhttp.readyState==4 && xmlhttp.status==200) //Wenn alles OK Pi in LocalStorage laden und der Variable Pi zuweisen
 		    {
 		    	var str_pi = xmlhttp.responseText;
-				str_pi = str_pi.replace("\"", ""); //Regex, jojo --> mol en sinvolli Aawändig för das ;)
+				str_pi = str_pi.replace("\"", ""); //Regex, jojo --> mol en sinvolli Aawï¿½ndig fï¿½r das ;)
 		    	localStorage.setItem('save_pi', str_pi);
-		    	pi = str_pi;
+		    	pi = str_pi;                
 		    }
 		  }
 		xmlhttp.open("GET","pi.txt",true);
@@ -37,7 +37,7 @@ window.onload = function(){
 	setting_changeFontsize();
 }
 
-//Überprüft ob in einem Eingabefeld Enter gedrückt wurde
+//ï¿½berprï¿½ft ob in einem Eingabefeld Enter gedrï¿½ckt wurde
 window.onkeydown = checkEnter;
 function checkEnter(e){
 	var keycode;
@@ -64,7 +64,7 @@ function checkEnter(e){
 	}
 }
 
-//Funktion um bestimmte Anzahl Stellen hinzuzufügen
+//Funktion um bestimmte Anzahl Stellen hinzuzufï¿½gen
 function addPos(times){
 	times = parseInt(times);
     if(times < 0){
@@ -91,7 +91,7 @@ function addPos(times){
     }
 }
 
-//Fügt jede Sekunde eine Anzahl Stellen hinzu
+//Fï¿½gt jede Sekunde eine Anzahl Stellen hinzu
 function addPosEachSecond(dps){
 	if(dps == 0){
 		clearInterval(interval);
@@ -124,7 +124,7 @@ function pauseInterval(){
 }
 
 
-//Setzt die Anzahl Stellen auf 0 zurück
+//Setzt die Anzahl Stellen auf 0 zurï¿½ck
 function reset(){
     counter = 1;
     document.getElementById("pi").innerHTML = "";
@@ -133,7 +133,7 @@ function reset(){
 
 var points = 0;
 
-//Funktion für den Guessmode
+//Funktion fï¿½r den Guessmode
 function guessNumber(num){
 	sendScoreContainer = document.getElementById("sendScoreContainer");
 	if(sendScoreContainer.style.display == "block"){sendScoreContainer.style.display = "none";}
@@ -179,7 +179,7 @@ var n7 = "#e74c3c";
 var n8 = "#ecf0f1";
 var n9 = "#95a5a6";
 
-//Funktion um Bildgrösse zu ändern
+//Funktion um Bildgrï¿½sse zu ï¿½ndern
 function changeSize(){
 	if(imgSize == 200){
 		imgSize = 300;
@@ -205,7 +205,7 @@ function changeSize(){
 	document.getElementById("imageCanvas").style.marginLeft = "-"+(imgSize/2+100).toString()+"px";
 }
 
-//Lädt das Bild
+//Lï¿½dt das Bild
 function loadImage(){
 	document.getElementById("colorChoiceContainer").style.display = "none";
 	if(document.getElementById("imageCanvas").style.display == "none"){document.getElementById("imageCanvas").style.display = "inline"}
@@ -231,7 +231,7 @@ function loadImage(){
 	}
 }
 
-//Lädt die Farb-Auswahl
+//Lï¿½dt die Farb-Auswahl
 function loadColorChoice(){
 	document.getElementById("imageCanvas").style.display = "none";
 	document.getElementById("colorChoiceContainer").style.display = "block";
@@ -251,7 +251,7 @@ function setNewColors(){
 	loadImage();
 }
 
-//Öffnet oder schliesst die Settings
+//ï¿½ffnet oder schliesst die Settings
 function toggleSettings(){
 	var settings = document.getElementById("settings");
 	var visibility = settings.style.visibility;
@@ -263,7 +263,7 @@ function toggleSettings(){
 	}
 }
 
-//Reagiert auf Setting Veränderung der FontSize
+//Reagiert auf Setting Verï¿½nderung der FontSize
 function setting_changeFontsize(){
 	var pival = document.getElementById("pi");
 	var range = document.getElementById("fontsize_range");

@@ -10,6 +10,13 @@
         <div class="backBtn" onclick="history.back();"></div>
         <div id="releaseNotes_container">
             <div class="version_notes" id="beta084">
+                <h1 class="version_title">BETA.0841</h1>
+                <ul class="releaseNotes_list">
+                    <li class="releaseNotes_point">The Pi Generator is now on <a href="http://tobip.ch/pigen">tobip.ch/pigen</a>!</li>
+                    <li class="releaseNotes_point">Faster Access in cause of faster Server</li>
+                </ul>
+            </div>
+            <div class="version_notes" id="beta084">
                 <h1 class="version_title">BETA.084</h1>
                 <ul class="releaseNotes_list">
                     <li class="releaseNotes_point">80% Speed Improvement. Pi will now be safed in the local-storage. Implementation by <a href="https://github.com/fabiocofano">fco</a>!</li>
