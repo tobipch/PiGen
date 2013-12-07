@@ -21,7 +21,7 @@
                 <form action="sites/sendHighscore.php" method="post">
                     <input type="text" name="sendScore_score" id="sendScoreScoreHidden" />
                     <input type="text" name="sendScore_name" id="sendScoreNameInput" placeholder="Name for Score" />
-                    <input type="submit" id="sendScoreButton" value="" />
+                    <input type="submit" id="sendScoreButton" value="" onclick="points = temppoints;document.getElementById('sendScoreScoreHidden').value = points.toString();temppoints = 0;" />
                 </form>
             </div>
         </div>

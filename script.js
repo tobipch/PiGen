@@ -132,6 +132,7 @@ function reset(){
 }
 
 var points = 0;
+var temppoints = 0;
 
 //Funktion f�r den Guessmode
 function guessNumber(num){
@@ -143,7 +144,8 @@ function guessNumber(num){
 		document.getElementById("false").style.display = "none";
 		document.getElementById("correct").style.display = "block";
 		setTimeout(function(){document.getElementById("correct").style.display = "none";},1500);
-		points += Math.pow(counter+1,2) * 9;
+		points = temppoints + Math.pow(counter+1,2) * 9;
+        temppoints = points;
 		document.getElementById("points").innerHTML = points + " P.";
 		document.getElementById("points").style.color = "#ceffc9";
 		addPos(1);
@@ -158,8 +160,7 @@ function guessNumber(num){
 		document.getElementById("points").innerHTML = "0 P.";
 		document.getElementById("points").style.color = "#ffffff";
 		document.getElementById("pi").innerHTML = "3.";
-		document.getElementById("sendScoreScoreHidden").value = points.toString();
-		points = 0;
+        points = temppoints;
 		addPos(0);
 	}
 	document.getElementById("g_valInput").select();
