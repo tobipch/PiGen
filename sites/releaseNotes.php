@@ -3,13 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <title>Pi Generator - Release Notes</title>
-        <link rel="stylesheet" href="../style.css">
+        <?php include("include.php"); ?>
     </head>
     <body>
         <?php include("header.php");?>
         <div class="backBtn" onclick="history.back();"></div>
         <div id="releaseNotes_container">
-            <div class="version_notes" id="beta084">
+            <div class="version_notes" id="beta0842">
+                <h1 class="version_title">BETA.0842</h1>
+                <ul class="releaseNotes_list">
+                    <li class="releaseNotes_point">The Pi Generator, now has a Favicon and a <a href="../images/logo.png">Logo</a> by <a href="https://github.com/fabiocofano">@fabiocofano</a></li>
+                    <li class="releaseNotes_point">I made the Pi Generator Guessmode ways more secure than it was (SQL Injections where possible and you could change your score in the browser)</li>
+                </ul>
+            </div>
+            <div class="version_notes" id="beta0841">
                 <h1 class="version_title">BETA.0841</h1>
                 <ul class="releaseNotes_list">
                     <li class="releaseNotes_point">The Pi Generator is now on <a href="http://tobip.ch/pigen">tobip.ch/pigen</a>!</li>

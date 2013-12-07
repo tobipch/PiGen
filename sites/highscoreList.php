@@ -16,7 +16,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Pi Generator - Highscore List</title>
-        <link rel="stylesheet" href="../style.css" />
+        <?php include("include.php"); ?>
     </head>
     <body>
         <?php include("header.php"); ?>

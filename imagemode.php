@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Pi Generator - Imagemode</title>
-        <link rel="stylesheet" href="style.css" />
+        <?php include("sites/include.php"); ?>
         <script src="script.js"></script>
     </head>
     <body>

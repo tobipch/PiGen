@@ -556,3 +556,10 @@ a:visited{
 #highscoreList td{
     padding: 5px 25px;
 }
+
+#helpImg {
+    background-image: url(images/question.png);
+    position: relative;
+    height: auto;
+    width: auto;
+}

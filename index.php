@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Pi Generator</title>
-        <link rel="stylesheet" href="style.css" defer />
+        <?php include("sites/include.php"); ?>
         <script src="script.js" defer="defer"></script>
     </head>
     <body>

@@ -140,6 +140,10 @@ function guessNumber(num){
 	if(sendScoreContainer.style.display == "block"){sendScoreContainer.style.display = "none";}
 	guessedNum = parseInt(num);
 	correctNum = parseInt(pi.charAt(counter));
+    if(document.getElementById("points").innerHTML=="0 P."){
+        points = 0;
+        temppoints = 0;
+    }
 	if(guessedNum == correctNum){
 		document.getElementById("false").style.display = "none";
 		document.getElementById("correct").style.display = "block";

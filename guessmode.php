@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Pi Generator - Guessmode</title>
-        <link rel="stylesheet" href="style.css" />
+        <?php include("sites/include.php"); ?>
         <script src="script.js"></script>
     </head>
     <body>
@@ -21,7 +21,7 @@
                 <form action="sites/sendHighscore.php" method="post">
                     <input type="text" name="sendScore_score" id="sendScoreScoreHidden" />
                     <input type="text" name="sendScore_name" id="sendScoreNameInput" placeholder="Name for Score" />
-                    <input type="submit" id="sendScoreButton" value="" onclick="points = temppoints;document.getElementById('sendScoreScoreHidden').value = points.toString();temppoints = 0;" />
+                    <input type="submit" id="sendScoreButton" value="" onclick="points = temppoints;document.getElementById('sendScoreScoreHidden').value = points.toString();temppoints = 0;points = 0;" />
                 </form>
             </div>
         </div>
