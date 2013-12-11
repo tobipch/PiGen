@@ -267,7 +267,7 @@ body{
 #imageCanvas{
     position: relative;
     left: 50%;
-    margin-left: -200px;
+    margin-left: -225px;
     margin-top: 50px;
 }
 
@@ -285,8 +285,8 @@ body{
 }
 #imgBtnContainer {
     left: 50%;
-    width: 200px;
-    margin-left: -100px;
+    width: 250px;
+    margin-left: -125px;
     position: relative;
 }
 
@@ -300,39 +300,6 @@ body{
     background-image: url(images/size_s.png);
     background-position: center;
     background-repeat: no-repeat;
-}
-
-#notification {
-    text-align: center;
-    font-family: Source;
-    color: #e74c3c;
-    font-size: 16px;
-    width: 50%;
-    left: 50%;
-    position: absolute;
-    margin-left: -25%;
-    margin-top: 10px;
-}
-
-#notification:hover #notificationImage{
-    display: none;
-}
-
-#notification:hover #notificationText{
-    display: block;
-}
-
-#notificationText {
-    display: none;
-}
-
-#notificationHoverHint {
-    position: relative;
-    top: -7px;
-}
-
-#notification:hover #notificationHoverHint {
-    display: none;
 }
 
 #optionBtn_color {
@@ -368,7 +335,10 @@ a:visited{
 
 .colorChoiceInput {
     margin-left: 5px;
+    margin-bottom: 5px;
     width: 100px;
+    box-shadow: 22.5px 0px black;
+    padding: 3px;
 }
 
 #colorChoiceApplyBtn {
@@ -541,8 +511,6 @@ a:visited{
     margin: 0 auto;
 }
 
-
-
 #highscoreList th{
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -562,4 +530,32 @@ a:visited{
     position: relative;
     height: auto;
     width: auto;
+}
+
+#optionBtn_settings {
+    background-color: #666;
+    background-image: url(images/settings_white.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0px 3px rgba(102, 102, 102, 0.2);
+}
+
+#optionBtn_settings:active{
+    box-shadow: none;
+}
+
+#imageSettingsContainer {
+    margin-top: 50px;
+    margin-left: 25px;
+    display: none;
+    font-family: Source;
+}
+
+#settingsApplyBtn {
+    height: 100%;
+    margin-top: 10px;
+}
+
+label {
+    font-weight: bold;
 }

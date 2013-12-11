@@ -10,6 +10,14 @@
         <div class="backBtn" onclick="history.back();"></div>
         <div id="releaseNotes_container">
             <div class="version_notes" id="beta0842">
+                <h1 class="version_title">BETA.085</h1>
+                <ul class="releaseNotes_list">
+                    <li class="releaseNotes_point">Now you can even better edit your personal Pi-Image. With integrated Style Tools we raised the Pi experience again.</li>
+                    <li class="releaseNotes_point">The color choice was also improved. Great share was attributable to the <a href="http://colpick.com/plugin"><i>colpick-plugin</i></a></li>
+                    <li class="releaseNotes_point">In addition to that, the Pi Image now loads a massiv amount faster. Check it out!</li>
+                </ul>
+            </div>                
+            <div class="version_notes" id="beta0842">
                 <h1 class="version_title">BETA.0842</h1>
                 <ul class="releaseNotes_list">
                     <li class="releaseNotes_point">The Pi Generator, now has a Favicon and a <a href="../images/logo.png">Logo</a> by <a href="https://github.com/fabiocofano">@fabiocofano</a></li>

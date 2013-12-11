@@ -19,19 +19,18 @@ if (localStorage.getItem('save_pi') == undefined){
 		xmlhttp.onreadystatechange=function()
 		  {
 		  if (xmlhttp.readyState==4 && xmlhttp.status==200) //Wenn alles OK Pi in LocalStorage laden und der Variable Pi zuweisen
-		    {
-		    	var str_pi = xmlhttp.responseText;
+			{
+				var str_pi = xmlhttp.responseText;
 				str_pi = str_pi.replace("\"", ""); //Regex, jojo --> mol en sinvolli Aaw�ndig f�r das ;)
-		    	localStorage.setItem('save_pi', str_pi);
-		    	pi = str_pi;                
-		    }
+				localStorage.setItem('save_pi', str_pi);
+				pi = str_pi;                
+			}
 		  }
 		xmlhttp.open("GET","pi.txt",true);
 		xmlhttp.send();
 }else{
 	pi = localStorage.getItem('save_pi'); //Wenn Pi schon im LocalStorage ist, die Zahl laden und der Variable zuweisen
 }
-
 //Erledigt einige Dinge, nachdem die Seite geladen wurde
 window.onload = function(){
 	setting_changeFontsize();
@@ -207,43 +206,100 @@ function changeSize(){
 	
 	document.getElementById("imageCanvas").width = imgSize;
 	document.getElementById("imageCanvas").height = imgSize;
-	document.getElementById("imageCanvas").style.marginLeft = "-"+(imgSize/2+100).toString()+"px";
+	document.getElementById("imageCanvas").style.marginLeft = "-"+(imgSize/2+125).toString()+"px";
+	loadImage();
 }
+
+var strokeWidth = 1;
+var strokeBool = false;
+var fillBool = true;
 
 //L�dt das Bild
 function loadImage(){
-	document.getElementById("colorChoiceContainer").style.display = "none";
-	if(document.getElementById("imageCanvas").style.display == "none"){document.getElementById("imageCanvas").style.display = "inline"}
-	var size = 10*(imgSize * imgSize);
-	
-	var mycanvas = document.getElementById("imageCanvas");
-	var context = mycanvas.getContext("2d");
-	
-	var x = 0;
-	var y = 0;
-	
-	var num = 0;
-	
-	for(var i=0;i<size;i++){
-		num=parseInt(pi.charAt(i));
-		context.beginPath();
-		context.strokeStyle = eval("n"+(num).toString());
-		context.rect(x,y,1,1);
-		context.stroke();
-		x++;
-		counter++;
-		if(x > (size/1000)){x=0;y++;}
+	if(typeof(Worker)!=="undefined"){
+		var worker = new Worker("draw_image.js");
+		var size = 5*(Math.pow(imgSize,2));
+		var pixelSize = 10;
+		var x = 0;
+		var y = 0;
+		var temp = "3";
+		var anzahl = Math.pow(imgSize/pixelSize,2);
+		
+		worker.postMessage(anzahl);
+		worker.postMessage(pi);
+		document.getElementById("colorChoiceContainer").style.display = "none";
+		document.getElementById("imageSettingsContainer").style.display = "none";
+		if(document.getElementById("imageCanvas").style.display == "none"){document.getElementById("imageCanvas").style.display = "inline";}
+
+		var mycanvas = document.getElementById("imageCanvas");
+		var context = mycanvas.getContext("2d");
+		
+		worker.onmessage = function(e){
+			num=e.data;
+			if(num != ""){
+				context.beginPath();
+				context.rect(x,y,pixelSize,pixelSize);
+				if(fillBool){
+				context.fillStyle = eval("n"+temp);
+				temp = num;
+				context.fill();
+				}
+				if(strokeBool){
+				context.strokeStyle = eval("n"+num);
+				context.lineWidth=strokeWidth;
+				context.stroke();
+				}
+				x+=pixelSize;
+				counter++;
+				if(x > (size/1000)){x=0;y+=pixelSize;}
+			}
+		}
+	}
+	else{
+		alert("You're using an old Browser. Download Firefox, for full browsing experience!");
 	}
 }
 
 //L�dt die Farb-Auswahl
 function loadColorChoice(){
 	document.getElementById("imageCanvas").style.display = "none";
+	document.getElementById("imageSettingsContainer").style.display = "none";
 	document.getElementById("colorChoiceContainer").style.display = "block";
 	
 	for(var i=0;i<=9;i++){
 		document.getElementById("colorChoiceInput"+i.toString()).value = eval("n"+i.toString());
+		document.getElementById("colorChoiceInput"+i.toString()).style.boxShadow = "20px 0px "+eval("n"+i.toString());
 	}
+	
+	var colorChoiceId;
+	var colorChoice;
+	
+	for(var j=0;j<=9;j++){
+		$("#colorChoiceInput"+j.toString()).colpick({
+			onSubmit: function(sb,hex,rgb,el){
+				$(el).val("#"+hex);
+				$(el).css("box-shadow","20px 0px "+"#"+hex);
+				$(el).colpickHide();
+			}
+		});
+	}
+}
+
+function loadImageSettings(){
+	document.getElementById("imageCanvas").style.display = "none";
+	document.getElementById("colorChoiceContainer").style.display = "none";
+	document.getElementById("imageSettingsContainer").style.display = "block";
+	
+	var rb_fill = document.forms["imageSettingsForm"].elements["fill_bool"];
+	var rb_stroke = document.forms["imageSettingsForm"].elements["stroke_bool"];
+	
+	if(fillBool){rb_fill[0].checked=true;}
+	else if(!fillBool){rb_fill[1].checked=true;}
+	
+	if(strokeBool){rb_stroke[0].checked=true;}
+	else if(!strokeBool){rb_stroke[1].checked=true;}
+	
+	document.getElementById("stroke_width").value = strokeWidth;
 }
 
 //Setzt neue Farben
@@ -253,6 +309,20 @@ function setNewColors(){
 		newColor = document.getElementById("colorChoiceInput"+i).value;
 		eval("n"+i.toString() + "= newColor");
 	}
+	loadImage();
+}
+
+function setSettings(){
+	var rb_fill = document.forms["imageSettingsForm"].elements["fill_bool"];
+	var rb_stroke = document.forms["imageSettingsForm"].elements["stroke_bool"];
+	
+	fillBool = rb_fill[0].checked;
+	if(!fillBool){
+		document.getElementById("imageCanvas").width = imgSize;
+		document.getElementById("imageCanvas").height = imgSize;
+	}
+	strokeBool = rb_stroke[0].checked;
+	strokeWidth = document.getElementById("stroke_width").value;
 	loadImage();
 }
 

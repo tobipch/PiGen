@@ -5,4 +5,4 @@
     <span class="bannerContent floatRight" id="bannerReleaseNotes"><a href=<?php if(file_exists("sites/releaseNotes.php")){echo("sites/releaseNotes.php");}else{echo("releaseNotes.php");} ?>>Release Notes</a></span>
 </div>
 <div id="helpImg"></div>
-<h1 id="heading">Pi Generator<span id="beta">BETA.0842</span></h1>
+<h1 id="heading">Pi Generator<span id="beta">BETA.085</span></h1>
